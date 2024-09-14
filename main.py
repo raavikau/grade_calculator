@@ -1,4 +1,33 @@
 
+jack = {"name": "Jack Frost",
+        "assignment": [80, 50, 40, 20],
+        "test": [75, 75],
+        "lab": [78.20, 77.20]
+        }
+james = {"name": "James Potter",
+         "assignment": [82, 56, 44, 30],
+         "test": [80, 80],
+         "lab": [67.90, 78.72]
+         }
+dylan = {"name": "Dylan Rhodes",
+         "assignment": [77, 82, 23, 39],
+         "test": [78, 77],
+         "lab": [80, 80]
+         }
+jess = {"name": "Jessica Stone",
+        "assignment": [67, 55, 77, 21],
+        "test": [40, 50],
+        "lab": [69, 44.56]
+        }
+tom = {"name": "Tom Hanks",
+       "assignment": [29, 89, 60, 56],
+       "test": [65, 56],
+       "lab": [50, 40.6]
+       }
+def get_average(marks):
+    total_sum = float(sum(marks))
+    return total_sum/len(marks)
+
 def check_grade(avg):
     if avg >= 90:
         print("Your Grade is A")
@@ -15,12 +44,9 @@ def check_grade(avg):
     else:
         print("Invalid Input!")
 
-sub1 = 44
-sub2 = 67
-sub3 = 76
-sub4 = 99
-sub5 = 58
-
-total = sub1 + sub2 + sub3 + sub4 + sub5
-average = total / 5
-check_grade(average)
+students = [jack, james, dylan, jess, tom]
+for student in students:
+    print(student['name'])
+    print("Average of assignment marks", get_average(student["assignment"]))
+    print("Average of test marks", get_average(student["test"]))
+    print("Average of lab marks", get_average(student["lab"]))
