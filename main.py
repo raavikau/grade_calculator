@@ -37,22 +37,21 @@ def marks_total_average(student_data):
 
 def check_grade(avg):
     if avg >= 90:
-        print("Your Grade is A")
+        return "A"
     elif avg >= 80:
-        print("Your Grade is B")
+        return "B"
     elif avg >= 70:
-        print("Your Grade is C")
+        return "C"
     elif avg >= 60:
-        print("Your Grade is D")
-    elif avg >= 50:
-        print("Your Grade is E")
-    elif avg >= 40:
-        print("You Grade is F")
+        return "D"
     else:
-        print("Invalid Input!")
+        return "E"
+
 
 students = [jack, james, dylan, jess, tom]
 for student in students:
     print(student["name"])
-    print("Total average of marks", marks_total_average(student))
-
+    student_average = marks_total_average(student)
+    print("Total average of marks", student_average)
+    print("Your Grade is", check_grade(student_average))
+    print("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=")
