@@ -28,6 +28,13 @@ def get_average(marks):
     total_sum = float(sum(marks))
     return total_sum/len(marks)
 
+def marks_total_average(student_data):
+    assignment_marks_average = get_average(student_data["assignment"])
+    test_marks_average = get_average(student["test"])
+    lab_marks_average = get_average(student["lab"])
+
+    return (0.1 * assignment_marks_average) + (0.7 * test_marks_average) + (0.2 * lab_marks_average)
+
 def check_grade(avg):
     if avg >= 90:
         print("Your Grade is A")
@@ -46,7 +53,6 @@ def check_grade(avg):
 
 students = [jack, james, dylan, jess, tom]
 for student in students:
-    print(student['name'])
-    print("Average of assignment marks", get_average(student["assignment"]))
-    print("Average of test marks", get_average(student["test"]))
-    print("Average of lab marks", get_average(student["lab"]))
+    print(student["name"])
+    print("Total average of marks", marks_total_average(student))
+
