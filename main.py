@@ -1,4 +1,4 @@
-
+# Program calculates individual students averages and grades as well as the class average and overall grade for the class.
 jack = {"name": "Jack Frost",
         "assignment": [80, 50, 40, 20],
         "test": [75, 75],
@@ -24,15 +24,16 @@ tom = {"name": "Tom Hanks",
        "test": [65, 56],
        "lab": [50, 40.6]
        }
-def get_average(marks):
+
+def get_marks_average(marks):
     total_sum = float(sum(marks))
     return total_sum/len(marks)
 
 def marks_total_average(student_data):
-    assignment_marks_average = get_average(student_data["assignment"])
-    test_marks_average = get_average(student_data["test"])
-    lab_marks_average = get_average(student_data["lab"])
-
+    assignment_marks_average = get_marks_average(student_data["assignment"])
+    test_marks_average = get_marks_average(student_data["test"])
+    lab_marks_average = get_marks_average(student_data["lab"])
+    # Return the result based on weightage supplied 10 % from assignments 70 % from test 20 % from lab-works
     return (0.1 * assignment_marks_average) + (0.7 * test_marks_average) + (0.2 * lab_marks_average)
 
 def check_grade(avg):
@@ -49,13 +50,13 @@ def check_grade(avg):
 
 def class_average(student_list):
     stu_data = []
-    for stu in student_list:
-        student_avg = marks_total_average(stu)
+    for stu in student_list:  # looping through the student list
+        student_avg = marks_total_average(stu)  # calculate their individual weighted average
         stu_data.append(student_avg)
-        return get_average(stu_data)
+    return get_marks_average(stu_data)  # average of all students
 
 students = [jack, james, dylan, jess, tom]
-for student in students:
+for student in students:  # take student name from list then access the data that's in dictionary respective name
     print(student["name"])
     student_average = marks_total_average(student)
     print("Total average of marks", student_average)
