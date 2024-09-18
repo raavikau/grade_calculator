@@ -51,12 +51,12 @@ def check_grade(avg):
 def class_average(student_list):
     stu_data = []
     for stu in student_list:  # looping through the student list
-        student_avg = marks_total_average(stu)  # calculate their individual weighted average
+        student_avg = marks_total_average(stu)  # calculate students individual weighted average
         stu_data.append(student_avg)
     return get_marks_average(stu_data)  # average of all students
 
 students = [jack, james, dylan, jess, tom]
-for student in students:  # take student name from list then access the data that's in dictionary respective name
+for student in students:  # take student name from list then access the data that's in dictionary respective variable name
     print(student["name"])
     student_average = marks_total_average(student)
     print("Total average of marks", student_average)
